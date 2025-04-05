@@ -13,6 +13,15 @@ const ai = new GoogleGenerativeAI(API_KEY);
 const model = ai.getGenerativeModel({ model: MODEL });
 
 const app = express();
+
+// Serve static files (CSS, JS, HTML)
+app.use(express.static(__dirname));
+
+// Serve index.html on root route
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
