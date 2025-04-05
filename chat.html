@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JARVIS - Chat Interface</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container chat-page">
+        <header class="header">
+            <div class="header-left">
+                <a href="index.html" class="back-button">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+                <div class="logo-small">
+                    <div class="arc-reactor-small">
+                        <div class="arc-reactor-core-small"></div>
+                    </div>
+                    <h1>JARVIS</h1>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="status-indicator">
+                    <span class="status-dot"></span>
+                    <span id="system-time">00:00:00</span>
+                </div>
+                <button id="settings-toggle" class="icon-button">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
+        </header>
+
+        <main class="chat-container">
+            <div class="chat-window" id="chat-window">
+                <div class="welcome-message">
+                    <div class="welcome-header">
+                        <div class="arc-reactor-medium">
+                            <div class="arc-reactor-ring-medium"></div>
+                            <div class="arc-reactor-core-medium"></div>
+                        </div>
+                        <div class="welcome-text">
+                            <h2>JARVIS INTERFACE INITIALIZED</h2>
+                            <p>How may I assist you today, sir?</p>
+                        </div>
+                    </div>
+                    <div class="system-boot">
+                        <div class="boot-line">SYSTEM BOOT SEQUENCE COMPLETE</div>
+                        <div class="boot-line">AI CORE ONLINE</div>
+                        <div class="boot-line">NATURAL LANGUAGE PROCESSING ACTIVE</div>
+                        <div class="boot-line">AWAITING INPUT...</div>
+                    </div>
+                </div>
+                <!-- Chat messages will be inserted here -->
+            </div>
+
+            <div class="input-container">
+                <div class="input-prefix">&gt;</div>
+                <input type="text" id="user-input" placeholder="Enter command or message..." autofocus>
+                <button id="send-button" class="send-button">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </main>
+
+        <div class="settings-panel" id="settings-panel">
+            <div class="settings-header">
+                <h3>SYSTEM SETTINGS</h3>
+                <button id="close-settings" class="icon-button">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="settings-content">
+                <div class="setting-item">
+                    <span>Interface Sounds</span>
+                    <label class="toggle">
+                        <input type="checkbox" id="sound-toggle" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <span>Dark Mode</span>
+                    <label class="toggle">
+                        <input type="checkbox" id="theme-toggle" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <span>Animation Level</span>
+                    <div class="select-wrapper">
+                        <select id="animation-level">
+                            <option value="minimal">Minimal</option>
+                            <option value="moderate" selected>Moderate</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-footer">
+                <div class="system-info-small">
+                    <div class="info-item-small">
+                        <i class="fas fa-microchip"></i>
+                        <span>SYSTEM v1.0.4</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="message-sent" src="sounds/message-sent.mp3" preload="auto"></audio>
+    <audio id="message-received" src="sounds/message-received.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
